@@ -14,13 +14,12 @@ import app from "./app.js";
 dotenv.config({ path: path.join(__dirname, "../.env") });
 console.log("ENV MONGO:", process.env.MONGODB_URI);
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 5000;
 
 connectDb().then(
      async () => {
         app.listen(PORT, () => {
           console.log(`Server is running on port ${PORT}`);
-          console.log(`Environment: ${process.env.NODE_ENV}`);
         });
      }
   ).catch((error) => {
