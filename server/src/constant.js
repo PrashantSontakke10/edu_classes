@@ -1,0 +1,1 @@
+export const DB_NAME = "edu_classes_db";
