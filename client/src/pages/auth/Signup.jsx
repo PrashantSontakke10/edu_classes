@@ -46,7 +46,7 @@ const Signup = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <h2>Signup</h2>
+      <h2 className="bg-blue-500 text-white p-2 rounded-md">Signup</h2>
 
       <input
         name="name"
