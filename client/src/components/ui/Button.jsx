@@ -1,22 +1,31 @@
-import React from 'react';
+import React from "react";
 
-const Button = ({ 
-  children, 
-  className = '', 
-  type = 'button', 
-  disabled = false, 
+const Button = ({
+  children,
+  className = "",
+  type = "button",
+  disabled = false,
   onClick,
-  ...props 
+  ...props
 }) => {
-  const baseClasses = 'inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none';
-  const defaultClasses = 'bg-primary text-primary-foreground hover:bg-primary/90 h-10 py-2 px-4';
-  
   return (
     <button
       type={type}
-      className={`${baseClasses} ${defaultClasses} ${className}`}
       disabled={disabled}
       onClick={onClick}
+      className={`
+        inline-flex items-center justify-center
+        h-10 px-4 py-2
+        rounded-md
+        text-sm font-medium
+        bg-blue-900 text-white
+        hover:bg-blue-800
+        transition-colors
+        focus:outline-none
+        focus:ring-2 focus:ring-blue-500 focus:ring-offset-2
+        disabled:opacity-50 disabled:pointer-events-none
+        ${className}
+      `}
       {...props}
     >
       {children}

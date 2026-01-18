@@ -1,23 +1,40 @@
-import React from 'react';
+import React from "react";
 
-const ImageLogo = ({ size = 'medium', showText = true, className = '' }) => {
-  const sizeClasses = {
-    small: 'logo-small',
-    medium: 'logo-medium', 
-    large: 'logo-large'
+const ImageLogo = ({ size = "medium", showText = true, className = "" }) => {
+  
+  const sizeMap = {
+    small: "w-[60px] h-[60px]",
+    medium: "w-[80px] h-[80px]",
+    large: "w-[120px] h-[120px]",
+  };
+
+  const textSizeMap = {
+    small: "text-sm",
+    medium: "text-lg",
+    large: "text-xl",
   };
 
   return (
-    <div className={`logo-container ${sizeClasses[size]} ${className}`}>
-      <div className="image-logo-wrapper">
-        <img 
-          src="/logo.jpg" 
+    <div
+      className={`flex items-center gap-4 ${
+        size === "large" ? "flex-col text-center" : ""
+      } ${className}`}
+    >
+      
+      {/* Logo Image */}
+      <div className="flex items-center justify-center">
+        <img
+          src="../../public/logo.jpg"
           alt="AIM - The Institute of Self Development Logo"
-          className="logo-image"
+          className={`${sizeMap[size]} object-contain`}
         />
       </div>
+
+      {/* Institute Name */}
       {showText && (
-        <div className="logo-institute-name">
+        <div
+          className={`font-bold text-blue-900 leading-tight ${textSizeMap[size]}`}
+        >
           AIM - The Institute of Self Development
         </div>
       )}

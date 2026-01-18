@@ -1,15 +1,19 @@
-import React from 'react';
+import React from "react";
 
-const Label = ({ 
-  className = '', 
+const Label = ({
+  className = "",
   children,
-  ...props 
+  ...props
 }) => {
-  const baseClasses = 'text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70';
-  
   return (
     <label
-      className={`${baseClasses} ${className}`}
+      className={`
+        text-sm font-medium text-gray-800
+        leading-none
+        block
+        mb-1
+        ${className}
+      `}
       {...props}
     >
       {children}

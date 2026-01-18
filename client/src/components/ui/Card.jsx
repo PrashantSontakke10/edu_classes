@@ -1,15 +1,10 @@
-import React from 'react';
+import React from "react";
 
-const Card = ({ 
-  className = '', 
-  children,
-  ...props 
-}) => {
-  const baseClasses = 'rounded-lg border bg-card text-card-foreground shadow-sm';
-  
+/* ---------------- Card Root ---------------- */
+const Card = ({ className = "", children, ...props }) => {
   return (
     <div
-      className={`${baseClasses} ${className}`}
+      className={`rounded-xl border border-gray-200 bg-white shadow-md ${className}`}
       {...props}
     >
       {children}
@@ -17,51 +12,67 @@ const Card = ({
   );
 };
 
-const CardHeader = ({ className = '', children, ...props }) => {
-  const baseClasses = 'flex flex-col space-y-1.5 p-6';
+/* ---------------- Card Header ---------------- */
+const CardHeader = ({ className = "", children, ...props }) => {
   return (
-    <div className={`${baseClasses} ${className}`} {...props}>
+    <div
+      className={`flex flex-col gap-1.5 p-6 ${className}`}
+      {...props}
+    >
       {children}
     </div>
   );
 };
 
-const CardTitle = ({ className = '', children, ...props }) => {
-  const baseClasses = 'text-2xl font-semibold leading-none tracking-tight';
+/* ---------------- Card Title ---------------- */
+const CardTitle = ({ className = "", children, ...props }) => {
   return (
-    <h3 className={`${baseClasses} ${className}`} {...props}>
+    <h3
+      className={`text-2xl font-semibold tracking-tight text-gray-900 ${className}`}
+      {...props}
+    >
       {children}
     </h3>
   );
 };
 
-const CardDescription = ({ className = '', children, ...props }) => {
-  const baseClasses = 'text-sm text-muted-foreground';
+/* ---------------- Card Description ---------------- */
+const CardDescription = ({ className = "", children, ...props }) => {
   return (
-    <p className={`${baseClasses} ${className}`} {...props}>
+    <p
+      className={`text-sm text-gray-600 ${className}`}
+      {...props}
+    >
       {children}
     </p>
   );
 };
 
-const CardContent = ({ className = '', children, ...props }) => {
-  const baseClasses = 'p-6 pt-0';
+/* ---------------- Card Content ---------------- */
+const CardContent = ({ className = "", children, ...props }) => {
   return (
-    <div className={`${baseClasses} ${className}`} {...props}>
+    <div
+      className={`p-6 pt-0 ${className}`}
+      {...props}
+    >
       {children}
     </div>
   );
 };
 
-const CardFooter = ({ className = '', children, ...props }) => {
-  const baseClasses = 'flex items-center p-6 pt-0';
+/* ---------------- Card Footer ---------------- */
+const CardFooter = ({ className = "", children, ...props }) => {
   return (
-    <div className={`${baseClasses} ${className}`} {...props}>
+    <div
+      className={`flex items-center p-6 pt-0 ${className}`}
+      {...props}
+    >
       {children}
     </div>
   );
 };
 
+/* Compound exports */
 Card.Header = CardHeader;
 Card.Title = CardTitle;
 Card.Description = CardDescription;
