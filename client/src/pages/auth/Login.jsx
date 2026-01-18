@@ -20,7 +20,7 @@ const Login = () => {
 
       if (res.data.user.role === "student") navigate("/student");
       else if (res.data.user.role === "teacher") navigate("/teacher");
-      else if (res.data.user.role === "admin") navigate("/admin");
+      //else if (res.data.user.role === "admin") navigate("/admin");
       else navigate("/login");
     } catch (error) {
       if (error.response) {

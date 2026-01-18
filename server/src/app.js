@@ -18,7 +18,6 @@ app.get("/", (req, res) => {
   res.send("API Running");
 });
 
-import testRoutes from "./routes/test.routes.js";
 import authRoutes from "./routes/auth.routes.js";
 
 // app.use("/api/test", testRoutes);

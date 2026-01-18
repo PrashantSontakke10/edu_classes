@@ -1,8 +1,5 @@
 import dotenv from "dotenv";
 // go ONE level up from src to server
-
-
-
 import path from "path";
 import { fileURLToPath } from "url";
 import connectDb from "./config/db.js";
