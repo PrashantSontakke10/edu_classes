@@ -4,12 +4,12 @@ const Gallery = () => {
   const [activeTab, setActiveTab] = useState("photos");
 
   const photos = [
-    { id: 1, src: "../../public/images/ceremony-1.jpg", alt: "AIM Institute Ceremony", title: "Ceremony Event" },
-    { id: 2, src: "../../public/images/ceremony-2.jpg", alt: "Welcome Ceremony", title: "Welcome Event" },
-    { id: 3, src: "../../public/images/ceremony-1.jpg", alt: "AIM Institute Ceremony", title: "Ceremony Event" },
-    { id: 4, src: "../../public/images/ceremony-2.jpg", alt: "Welcome Ceremony", title: "Welcome Event" },
-    { id: 5, src: "../../public/images/ceremony-1.jpg", alt: "AIM Institute Ceremony", title: "Ceremony Event" },
-    { id: 6, src: "../../public/images/ceremony-2.jpg", alt: "Welcome Ceremony", title: "Welcome Event" },
+    { id: 1, src: "/images/ceremony-1.jpg", alt: "AIM Institute Ceremony", title: "Ceremony Event" },
+    { id: 2, src: "/images/ceremony-2.jpg", alt: "Welcome Ceremony", title: "Welcome Event" },
+    { id: 3, src: "/images/ceremony-1.jpg", alt: "AIM Institute Ceremony", title: "Ceremony Event" },
+    { id: 4, src: "/images/ceremony-2.jpg", alt: "Welcome Ceremony", title: "Welcome Event" },
+    { id: 5, src: "/images/ceremony-1.jpg", alt: "AIM Institute Ceremony", title: "Ceremony Event" },
+    { id: 6, src: "/images/ceremony-2.jpg", alt: "Welcome Ceremony", title: "Welcome Event" },
   ];
 
   const videos = [

@@ -65,7 +65,7 @@ const Header = () => {
 
           {/* Enroll Button */}
           <button
-            onClick={() => navigate("/signup")}
+            onClick={() => navigate("/admission-form")}
             className="bg-blue-900 text-white px-5 py-2 rounded-md font-semibold hover:bg-blue-800 transition"
           >
             Enroll Now

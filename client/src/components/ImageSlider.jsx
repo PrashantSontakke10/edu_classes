@@ -5,14 +5,14 @@ const ImageSlider = () => {
 
   const images = [
     {
-      src: "../../public/images/ceremony-1.jpg",
+      src: "/images/ceremony-1.jpg",
       alt: "AIM Institute Ceremony - Prof. V. Inkare Sir felicitation",
       title: "AIM Institute Ceremony",
       description:
         "Prof. V. Inkare Sir being honored at AIM Institute of Self Development, Akot",
     },
     {
-      src: "../../public/images/ceremony-2.jpg",
+      src: "/images/ceremony-2.jpg",
       alt: "AIM Institute Welcome Ceremony",
       title: "Welcome Ceremony",
       description: "Celebrating excellence in education at AIM Institute",

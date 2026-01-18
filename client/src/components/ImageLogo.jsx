@@ -24,7 +24,7 @@ const ImageLogo = ({ size = "medium", showText = true, className = "" }) => {
       {/* Logo Image */}
       <div className="flex items-center justify-center">
         <img
-          src="../../public/logo.jpg"
+          src="/logo.jpg"
           alt="AIM - The Institute of Self Development Logo"
           className={`${sizeMap[size]} object-contain`}
         />

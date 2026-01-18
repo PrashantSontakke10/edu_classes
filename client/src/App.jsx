@@ -11,7 +11,8 @@ import Legacy from './components/Legacy';
 import PopularCourses from './components/PopularCourses';
 import Gallery from './components/Gallery';
 import Footer from './components/Footer';
-
+import AdmissionForm from './pages/AdmissionForm';
+import Payment from './pages/payment';
 
 
 function Home() {
@@ -36,6 +37,8 @@ function App() {
       <Route path="/" element={<Home />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/admission-form" element={<AdmissionForm />} />
+        <Route path="/payment" element={<Payment />} />
       </Routes>
     </BrowserRouter>
   );
