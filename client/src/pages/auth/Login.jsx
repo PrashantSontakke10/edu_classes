@@ -9,7 +9,7 @@ const Login = () => {
   const [form, setForm] = useState({
     email: "",
     password: "",
-    role: "teacher",
+    role: "student",
   });
 
   const [loading, setLoading] = useState(false);
