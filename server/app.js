@@ -1,18 +1,27 @@
 import express from "express";
-import connectDB from "./src/database/database.js";
 import dotenv from "dotenv";
-dotenv.config();
+import cors from "cors"
+import mongoose from "mongoose";
+import authRoute from "./src/routes/authRoute.js";
+dotenv.config({path:"./.env"});
 
 const app = express();
-const port = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000;
 
+app.use(express.json());
+app.use(cors({
+    origin: '*',
+    credentials: true,
+    methods: ['GET', 'POST','PUT', 'OPTIONS','DELETE'],
+    allowedHeaders: ['Content-Type','Authorization']
+}));
 
+app.use("/api/auth",authRoute);
 
-connectDB().then(async () => {
-  console.log("Connected Database Successfully")
-  app.listen(port, () => {
-    console.log(`Database Connected to port ${port}`);
-  })
-}).catch(() => {
-  console.error("Error in connection with database");
+mongoose.connect(process.env.DB_URL)
+.then(()=> app.listen(PORT,()=>console.log(`Server running successfully to port ${PORT}`)))
+.catch((err)=>console.log(err));
+
+mongoose.connection.on("error", (err) => {
+    console.error("MongoDB Connection Error:", err);
 });
