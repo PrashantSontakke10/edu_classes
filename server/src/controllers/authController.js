@@ -53,6 +53,16 @@ const loginUser = async (req, res) => {
             return res.status(400).json({ message: "Invalid Credentials" });
         }
 
+        //cookies
+        const token = generateToken(user);
+
+        res.cookie("token", token, {
+            httpOnly: true,
+            secure: process.env.NODE_ENV === "production",
+            sameSite: "strict",
+            maxAge: 7 * 24 * 60 * 60 * 1000
+        });
+
         res.status(201).json({
              message: "User Login Successfully"
         });
