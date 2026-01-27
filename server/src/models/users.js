@@ -78,7 +78,7 @@ const user = new mongoose.Schema({
     HDYK: {
         type: String,
         enum: ["Newspaper", "Friends", "SocialMedia"]
-    }
+    },
 });
 
 const User = mongoose.model("User", user);

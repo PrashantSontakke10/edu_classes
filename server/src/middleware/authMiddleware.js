@@ -2,17 +2,14 @@ import jwt from "jsonwebtoken";
 
 const authMiddleware = (req, res, next) => {
   try {
-    // 1️⃣ Get token from cookie
     const token = req.cookies.token;
 
     if (!token) {
       return res.status(401).json({ message: "Access denied. No token." });
     }
 
-    // 2️⃣ Verify token
     const decoded = jwt.verify(token, process.env.JWT_TOKEN);
 
-    // 3️⃣ Attach user info
     req.user = decoded;
 
     next();

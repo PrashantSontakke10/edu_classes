@@ -1,9 +1,9 @@
-import express from "express";
 import dotenv from "dotenv";
+dotenv.config({path:"./.env"});
+
+import express from "express";
 import cors from "cors"
 import mongoose from "mongoose";
-import authRoute from "./src/routes/authRoute.js";
-dotenv.config({path:"./.env"});
 import cookieParser from "cookie-parser";
 
 const app = express();
@@ -19,10 +19,10 @@ app.use(cors({
 }));
 
 import userRoutes from "./src/routes/userRoute.js";
+import authRoute from "./src/routes/authRoute.js";
 
 app.use("/api/auth",authRoute);
 app.use("/api/user", userRoutes);
-
 
 mongoose.connect(process.env.DB_URL)
 .then(()=> app.listen(PORT,()=>console.log(`Server running successfully to port ${PORT}`)))
